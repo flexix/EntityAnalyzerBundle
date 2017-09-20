@@ -1,0 +1,8 @@
+parameters:
+
+services:
+    
+    flexix.entity_analyzer.entity_analyzer_factory:
+        class: Flexix\EntityAnalyzerBundle\Util\EntityAnalyzerFactory
+        arguments: ['%kernel.root_dir%']
+       

@@ -1,0 +1,150 @@
+AppBundle\Entity\Scriptelement:
+    type: entity
+    table: scriptelement
+    indexes:
+        name:
+            columns:
+                - name
+        scriptelementtypeid:
+            columns:
+                - scriptelementtypeid
+        position:
+            columns:
+                - position
+        scriptelementid:
+            columns:
+                - scriptelementid
+    properties:
+        name:
+            section: fields
+        scriptpageid:
+            section: fields
+        scriptelementtypeid:
+            section: fields
+        position:
+            section: fields
+        scriptelementid:
+            section: fields
+        creationdate:
+            section: fields
+        modificationdate:
+            section: fields
+        locktime:
+            section: fields
+        lockusr:
+            section: fields
+    visuals:
+        filter:
+            - name
+            - scriptpageid
+            - scriptelementtypeid
+            - position
+            - scriptelementid
+            - creationdate
+            - modificationdate
+            - locktime
+            - lockusr
+        list:
+            - name
+            - scriptpageid
+            - scriptelementtypeid
+            - position
+            - scriptelementid
+            - creationdate
+            - modificationdate
+            - locktime
+            - lockusr
+        insertForm:
+            - name
+            - scriptpageid
+            - scriptelementtypeid
+            - position
+            - scriptelementid
+            - creationdate
+            - modificationdate
+            - locktime
+            - lockusr
+        editForm:
+            - name
+            - scriptpageid
+            - scriptelementtypeid
+            - position
+            - scriptelementid
+            - creationdate
+            - modificationdate
+            - locktime
+            - lockusr
+        searchForm:
+            - name
+            - scriptpageid
+            - scriptelementtypeid
+            - position
+            - scriptelementid
+            - creationdate
+            - modificationdate
+            - locktime
+            - lockusr  
+        get:
+            - name
+            - scriptpageid
+            - scriptelementtypeid
+            - position
+            - scriptelementid
+            - creationdate
+            - modificationdate
+            - locktime
+            - lockusr       
+            
+            
+    id:
+        id:
+            type: bigint
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: false
+            length: 4000
+            options:
+                fixed: false
+        scriptpageid:
+            type: bigint
+            nullable: false
+            options:
+                unsigned: false
+        scriptelementtypeid:
+            type: bigint
+            nullable: false
+            options:
+                unsigned: false
+        position:
+            type: bigint
+            nullable: true
+            options:
+                unsigned: false
+        scriptelementid:
+            type: bigint
+            nullable: true
+            options:
+                unsigned: false
+        creationdate:
+            type: datetime
+            nullable: true
+        modificationdate:
+            type: datetime
+            nullable: true
+        locktime:
+            type: datetime
+            nullable: true
+        lockusr:
+            type: string
+            nullable: true
+            length: 250
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }
