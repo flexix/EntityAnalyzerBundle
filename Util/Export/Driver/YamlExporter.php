@@ -214,7 +214,8 @@ class YamlExporter extends AbstractExporter {
         $this->initliazeAnalyzerProperites($array);
         try {
 
-            $this->reflectionClass = new \ReflectionClass($metadata->name);
+            $this->reflectionClass = new \ReflectionClass($metadata->rootEntityName);
+          
         } catch (\Exception $e) {
 
             echo sprintf("%s doesn't exist in this bundle, but exists in database. Entity configuration skipped.\n", $metadata->name);
@@ -226,7 +227,7 @@ class YamlExporter extends AbstractExporter {
             $this->analyzePropertiesInfo($this->reflectionClass, $array);
             $this->createRecord($array, $array['properties']);
             $this->addTabs($array, $array['properties']);
-            return $this->yamlDump([$metadata->name => $array], 10);
+            return $this->yamlDump([$metadata->rootEntityName => $array], 10);
         }
     }
 
