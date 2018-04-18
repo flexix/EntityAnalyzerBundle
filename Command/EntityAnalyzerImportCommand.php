@@ -196,7 +196,7 @@ $sm=$em->getConnection()->getSchemaManager();
 
 
         if (file_exists($filename)) {
-            if ($checksumController->checkChecksum($filename)) {
+            if ($checksumController->checkChecksum($filename,$content)) {
                 $checksumController->addFile($filename);
             } else {
                 $folderPath = $checksumControllerDirBuidler->getTempFolderPath($filename);
