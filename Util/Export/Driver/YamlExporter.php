@@ -150,12 +150,15 @@ class YamlExporter extends AbstractExporter {
 
     protected function addNewLines(&$lines, $number = 1) {
 
-        $numberOfLines = count($lines);
+       if(is_array($lines) && !empty($lines))
+       {    
+            $numberOfLines = count($lines);
 
-        for ($i = 1; $i <= count($number); $i++) {
+            for ($i = 1; $i <= count($number); $i++) {
 
-            $lines[sprintf('line_%d', $numberOfLines + $i)] = [];
-        }
+                $lines[sprintf('line_%d', $numberOfLines + $i)] = [];
+            }
+       }
     }
 
     public function createRecord(&$array, $properties) {
